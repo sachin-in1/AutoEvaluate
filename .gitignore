@@ -1,4 +1,5 @@
 dataset/
+model_checkpoint/
 
 # Compiled source #
 ###################
