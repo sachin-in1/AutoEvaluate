@@ -87,15 +87,9 @@ str1 = open('key1.txt','r').read()
 str2 = open('key2.txt','r').read()
 str3 = open('key3.txt','r').read()
 str4 = open('key4.txt','r').read()
-manual=[]
-#print("Please enter the no.of manual keywords you want to enter : ")
-#n=int(input())
-#if(n!=0):
-#	print("Enter the keywords: \n")
-#	for i in range(n):
-#		manual.append(input())
-manual = [ 'rapid automatic keyword extraction', 'concrete application depend', 'widely use nlp technique', 'automatically extract keywords', 'compact representation', 'keywords', 'write', 'word', 'well', 'together', 'sequence', 'rake', 'purpose', 'provide', 'one', 'lot', 'language', 'known', 'domain', 'document', 'content', 'algorithm' ]
-
+manual = [
+            'rapid automatic keyword extraction', 'concrete application depend', 'widely use nlp technique', 'automatically extract keywords', 'compact representation', 'keywords', 'write', 'word', 'well', 'together', 'sequence', 'rake', 'purpose', 'provide', 'one', 'lot', 'language', 'known', 'domain', 'document', 'content', 'algorithm'
+            ]
 str5='.'.join(manual)
 
 ans=lemmatize_sentence(str)
@@ -104,7 +98,6 @@ s1=lemmatize_sentence(str1)
 s2=lemmatize_sentence(str2)
 s3=lemmatize_sentence(str3)
 s4=lemmatize_sentence(str4)
-#if(len(manual)!=0):
 s5=lemmatize_sentence(str5)
 
 #a=stemSentence(s1)
@@ -114,7 +107,6 @@ r.extract_keywords_from_text(s1)
 s.extract_keywords_from_text(s2)
 t.extract_keywords_from_text(s3)
 u.extract_keywords_from_text(s4)
-#if(len(manual)!=0):
 v.extract_keywords_from_text(s5)
 
 # Extraction given the list of strings where each string is a sentence.
@@ -126,7 +118,6 @@ r1=r.get_ranked_phrases()
 r2=s.get_ranked_phrases()
 r3=t.get_ranked_phrases()
 r4=u.get_ranked_phrases()
-#if(len(manual)!=0):
 r5=v.get_ranked_phrases()
 #print(r.extract_keywords_from_sentences(s3))
 
@@ -146,16 +137,13 @@ r1.sort()
 r2.sort()
 r3.sort()
 r4.sort()
-#if(len(manual)!=0):
 r5.sort()
+
 arr = array.array('d',[0,0,0,0,0])
-#else:
-#	arr = array.array('d',[0,0,0,0])
 arr[0]=similar(a1,r1)
 arr[1]=similar(a1,r2)
 arr[2]=similar(a1,r3)
 arr[3]=similar(a1,r4)
-#if(len(manual)!=0):
 arr[4]=similar(a1,r5)
 
 print("similarity array :\n",arr)
@@ -168,8 +156,7 @@ print("keywords from key3")
 print(r3,'\n')
 print("keywords from key4")
 print(r4,'\n')
-#if(len(manual)!=0):
-print("keywords from hardcoded keys")
+print("keywords from key5")
 print(r5,'\n')
 print("Maximum Similarity ",max(arr)," with ",arr.index(max(arr)),"th keyset")
 print("Minimum Similarity ",min(arr)," with ",arr.index(min(arr)),"th keyset")
